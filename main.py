@@ -14,10 +14,10 @@ def read_file_content(filename):
 
 def count_words():
     text = read_file_content("./story.txt")
-    counts = defaultdict(int)
+    my_words_counts = defaultdict(int)
     for a_text in re.findall('\w+', text):
-        counts[a_text] += 1
-    return counts
+        my_words_counts[a_text] += 1
+    return my_words_counts
 
 
 file_is = 'story.txt'
