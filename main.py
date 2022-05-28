@@ -3,6 +3,9 @@
 # count_words("The cake is done. It is a big cake!") 
 # --> {"cake":2, "big":1, "is":2, "the":1, "a":1, "it":1}
 
+from collections import defaultdict
+import re
+
 def read_file_content(filename):
     with open(filename) as chris:
         now_reading = chris.read()    
@@ -11,11 +14,12 @@ def read_file_content(filename):
 
 def count_words():
     text = read_file_content("./story.txt")
-    # [assignment] Add your code here
-
-    return {"as": 10, "would": 20}
+    counts = defaultdict(int)
+    for a_text in re.findall('\w+', text):
+        counts[a_text] += 1
+    return counts
 
 
 file_is = 'story.txt'
 about_to_open_and_read_file = read_file_content(file_is)
-print(about_to_open_and_read_file)
+print(count_words())
