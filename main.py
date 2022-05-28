@@ -4,10 +4,9 @@
 # --> {"cake":2, "big":1, "is":2, "the":1, "a":1, "it":1}
 
 def read_file_content(filename):
-    
-    # [assignment] Add your code here 
-    
-    return "Hello World"
+    with open(filename) as chris:
+        now_reading = chris.read()    
+    return now_reading
 
 
 def count_words():
@@ -15,3 +14,8 @@ def count_words():
     # [assignment] Add your code here
 
     return {"as": 10, "would": 20}
+
+
+file_is = 'story.txt'
+about_to_open_and_read_file = read_file_content(file_is)
+print(about_to_open_and_read_file)
